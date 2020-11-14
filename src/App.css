@@ -1,0 +1,371 @@
+body{
+  --slack-color: #3f0f40;
+  overflow: hidden;
+}
+.app__body {
+  display: flex;
+  height: 92vh;
+}
+
+/* @Header component */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  background-color: var(--slack-color);
+  color: white;
+}
+
+.header__left {
+  flex: 0.3;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.header__left > .MuiSvgIcon-root {
+  margin-left: auto;
+  margin-right: 30px;
+  cursor: pointer;
+  padding: 8px;
+  color: white;
+  font-size: 18px;
+  border-radius: 999px;
+}
+
+.header__info {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.header__info > h2 {
+  font-size: 15px;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+.header__info > h3 {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.header__info > h3 .MuiSvgIcon-root {
+  font-size: 14px;
+  margin-top: 1px;
+  margin-right: 2px;
+  color: green;
+}
+
+.header__search {
+  flex: 0.4;
+  background-color: #421f44;
+  text-align: center;
+  display: flex;
+  padding: 0 50px;
+  color: gray;
+  border: 1px gray solid;
+  border-radius: 6px;
+}
+
+.header__search > input {
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  min-width: 35vw;
+}
+
+.header__right {
+  flex: 0.3;
+  display: flex;
+  align-items: flex-end;
+}
+
+.header__logout {
+  margin-right: auto;
+  margin-left: 80px;
+}
+
+.header__right > .MuiSvgIcon-root {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+/* teamSidebar component */
+.teamSidebar {
+  width: 50px;
+  color: white;
+  background-color: #49274b;
+}
+
+.teamSidebar__wrapper {
+  grid-column: 1;
+  grid-row:  1 / 4;
+  color: #958993;
+}
+
+.teamSidebar__list {
+  width: 100%;
+  padding-left: 0px;
+  padding-top: 3px;
+  list-style: none;
+}
+
+.teamSidebar__listItem {
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  background-color: #676066;
+  color: #fff;
+  margin: auto;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  border-radius: 11px;
+}
+
+.teamSidebar__listItem:hover {
+  border-style: solid;
+  border-width: thick;
+  border-color: #767676;
+}
+
+/* Sidebar component */
+.sidebar {
+  flex:0.17;
+  color: white;
+  background-color: var(--slack-color);
+  border-top: 1px solid #49274b;
+  width: 260px;
+  overflow-y: scroll;
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar > hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #49274b;
+}
+
+/* SidebarOption component */
+.sidebarOption {
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  padding-left: 2px;
+  cursor: pointer;
+}
+
+.sidebarOption > h3 {
+  font-weight: 500;
+}
+
+.sidebarOption:hover {
+  opacity: 0.9;
+  background-color: #340e36;
+}
+
+.sidebarOption__icon {
+  padding: 10px;
+  font-size: 15px !important;
+}
+
+.sidebarOption__channel {
+  padding: 10px 0;
+}
+
+.sidebarOption__hash {
+  padding: 10px;
+}
+
+/* Chat component */
+.chat {
+  flex: 0.65;
+  padding-bottom: 150px;
+  background-color: lightgray;
+}
+
+.chat__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid #49274b;
+}
+
+.chat__channelName {
+  display: flex;
+  align-items: center;
+}
+
+.chat__channelName .MuiSvgIcon-root {
+  margin-left: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.chat__headerRight > p {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.chat__headerRight > p > .MuiSvgIcon-root {
+  margin-right: 5px !important;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.chat__messages {
+  display: flex;
+  flex-direction: column-reverse;
+  max-height: 75vh;
+  overflow-y: scroll;
+}
+
+.chat__messages::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* Message Component */
+.message {
+  display: flex;
+  padding: 20px;
+  align-items: center;
+}
+
+.message > img {
+  height: 50px;
+  width: 50px;
+  object-fit: contain;
+}
+
+.message__timestamp {
+  color: gray;
+  font-weight: 300;
+  font-size: 13px;
+}
+
+/* SendMessage Component */
+.sendMessage {
+  border-radius: 20px;
+}
+
+.sendMessage > form {
+  position: relative;
+  display: flex;
+}
+
+.sendMessage > form > input {
+  position: fixed;
+  bottom: 10px;
+  width: 735px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.sendMessage > form > button {
+  position: fixed;
+  bottom: 10px;
+  padding: 8px;
+  right: 260px;
+  color: white;
+  font-size: 14px;
+  border-radius: 3px;
+  background-color: var(--slack-color);
+}
+
+/* Details component */
+.details {
+  padding: 20px;
+}
+
+.details__header > h4{
+  color: var(--slack-color);
+}
+
+.details__content {
+  padding-top: 20px;
+}
+
+.details__content > h5 {
+  color: var(--slack-color);
+}
+
+.details__member {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  font-weight: 500;
+}
+
+.details__member:hover {
+  opacity: 0.7;
+  background-color: #49274b;
+  color: white;
+}
+
+.details__member > img {
+  width: 50px;
+  height: 50px;
+  border-radius: 60px;
+}
+
+.details__member > h3 .MuiSvgIcon-root {
+  font-size: 14px;
+  margin-top: 1px;
+  margin-right: 2px;
+  color: green;
+}
+/* Modals */
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* AddTeamMember /modals */
+.addTeamMember {
+  background-color: white;
+  border: 2px solid #000;
+  box-shadow: transparent;
+  padding: 10px;
+  color: black;
+}
+
+.addTeamMemberBtn {
+  padding: 10px;
+}
+
+/* AdChannel /modals */
+.addChannelModal {
+  background-color: white;
+  border: 2px solid #000;
+  box-shadow: transparent;
+  padding: 10px;
+  color: black;
+}
+
+.addChannel__name {
+  width: 400px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 300;
+}
+.addChannel__public{
+  padding: 10px;
+  margin-top: 10px;
+}
+.addChannelModal > button {
+  padding: 10px;
+}
